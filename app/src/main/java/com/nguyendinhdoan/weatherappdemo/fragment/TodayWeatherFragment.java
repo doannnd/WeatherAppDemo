@@ -19,7 +19,6 @@ import com.nguyendinhdoan.weatherappdemo.retrofit.IOpenWeatherMap;
 import com.nguyendinhdoan.weatherappdemo.retrofit.RetrofitClient;
 import com.squareup.picasso.Picasso;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -152,4 +151,9 @@ public class TodayWeatherFragment extends Fragment {
         );
     }
 
+    @Override
+    public void onStop() {
+        compositeDisposable.clear();
+        super.onStop();
+    }
 }

@@ -24,6 +24,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.nguyendinhdoan.weatherappdemo.adapter.ViewPagerAdapter;
 import com.nguyendinhdoan.weatherappdemo.common.Common;
+import com.nguyendinhdoan.weatherappdemo.fragment.ForecastFragment;
 import com.nguyendinhdoan.weatherappdemo.fragment.TodayWeatherFragment;
 
 import java.util.List;
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(TodayWeatherFragment.getInstance(), "Today");
+        viewPagerAdapter.addFragment(ForecastFragment.getInstance(), "5 DAY");
         viewPager.setAdapter(viewPagerAdapter);
     }
 
